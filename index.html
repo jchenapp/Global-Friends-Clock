@@ -179,23 +179,7 @@ function loadData() {
         }
     }
 }
-2. 修改現有的 Function 來觸發儲存
-你需要在所有會改變狀態的地方補上 saveData()。
-修改 init()：
-code
-JavaScript
-function init() {
-    loadData(); // 第一步：先讀取舊資料
-    
-    const list = document.getElementById('cityList');
-    allCities.forEach(c => {
-        const d = document.createElement('div'); d.className = 'city-item';
-        d.innerHTML = `<span>${c.name}</span><span style="opacity:0.4">${c.zone.split('/')[0]}</span>`;
-        d.onclick = () => addFriend(c); list.appendChild(d);
-    });
-    renderButtons(); 
-    requestAnimationFrame(animate);
-}
+
         const allCities = [
             { name: "Estonia", zone: "Europe/Tallinn" }, { name: "France", zone: "Europe/Paris" },
             { name: "Japan", zone: "Asia/Tokyo" }, { name: "London", zone: "Europe/London" },
